@@ -1,0 +1,66 @@
+Pilha 
+
+Complexidade assintótica 
+
+Espaço tem uma complexidade de (n) pois se adapta ao exato tamanho da quantidade de dados
+
+Tempo
+    push tem a complexidade O(1) 
+        pois não precisa viajar ou acessar a extenção da base de dados pois sempre e colocado no final
+    pop também push tem a complexidade O(1) 
+        pois não precisa viajar ou acessar a extenção da base de dados pois sempre e retirado do final
+
+benchmark no meu computador
+Tempo decorrido para adicionar elementos na pilha: 0.7726 ms
+Tamanho final da pilha : 10
+Tempo decorrido para remover elementos da pilha: 0.0056 ms
+
+//**************************************************************************************************
+
+Fila
+
+Complexidade assintótica 
+
+Espaço tem uma complexidade de (n) pois se adapta ao exato tamanho da quantidade de dados
+
+Tempo
+    enqueue tem a complexidade O(1) 
+        pois não precisa viajar ou acessar a extenção da base de dados pois sempre e colocado no final
+    dequeue também push tem a complexidade O(1) 
+        pois não precisa viajar ou acessar a extenção da base de dados pois sempre e retirado do começo
+
+benchmark no meu computador
+Tempo decorrido para adicionar elementos na fila: 0.7203 ms
+Tamanho da fila após adição: 10
+Tempo decorrido para resgatar o último elemento da fila: 0.0047 ms
+Tempo decorrido para resgatar o primeiro elemento da fila: 0.0029 ms
+Tempo decorrido para remover elementos da fila: 0.0062 ms
+A fila está vazia.
+
+//**************************************************************************************************
+
+Lista duplamente encadeada
+
+Espaço tem uma complexidade de (n) pois se adapta ao exato tamanho da quantidade de dados
+
+Tempo
+    insert tem a complexidade O(1) 
+        pois não precisa viajar ou acessar a extenção da base de dados pois sempre e colocado no final
+    remove também push tem a complexidade O(1) 
+        pois não precisa viajar ou acessar a extenção da base de dados pois sempre e retirado do começo
+    insert tem a complexidade O(1) 
+        pois não precisa viajar ou acessar a extenção da base de dados pois sempre e colocado no final
+    remove também push tem a complexidade O(1) 
+        pois não precisa viajar ou acessar a extenção da base de dados pois sempre e retirado do começo
+    ElementAt possui um complexidade O(n) 
+        pois no pior caso precisa percorrer a base de dados inteira para chegar ao indice
+
+benchmark no meu computador
+Tempo decorrido para adicionar elementos à lista via push: 0.6603 ms
+Lista após adicionar elementos via push:10
+Tempo decorrido para remover elementos da lista via pop: 0.010001 ms
+Tempo decorrido para adicionar elementos à lista via insert: 0.0085 ms
+Lista após adicionar elementos via insert:10
+Tempo decorrido para encontrar elementos na ultima posição da lista via elementAt: 0.006101 ms
+Tempo decorrido para remover elementos da lista via remove: 0.0095 ms
+PS C:\Users\djalm\Documents\repositórios\ebac\backendjavapro\mod_1> 
