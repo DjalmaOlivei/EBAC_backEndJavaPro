@@ -1,0 +1,17 @@
+Explique, com suas palavras, por que os seguintes princípios de código limpo são importantes:
+
+1- Usar nomenclatura adequada
+
+    R:Sem uma nomenclatura adequada e planejada pode tornar uma manutenção muitas vezes mais difícil do que re-escrever o próprio código.
+
+2- Resolver os problemas na causa raiz
+
+    R:Resolver um problema de forma parcial e sem resolver a causa raíz vai simplesmente a longo prazo criar dependencias de sistema cada vez mais fortes,
+        e a longo prazo pode tornar o sistema ineficiênte, 
+        difícil de trazer atualizações de mercado e até comprometer todo o sistema com acúmulo de bugs.
+
+3- Seguir a política do escoteiro
+
+    R: É extremamente importante para que se tenha um sistema saudável tanto para a empresa quanto para os funcionários,
+        lidar com sistemas extremamente complexos vai resultar em um produto que deixa a desejar, 
+        cobra muito de demandas desnecessárias, exaustivas para equipe

@@ -1,0 +1,10 @@
+Para cada uma das assinaturas de método abaixo, explique qual o princípio de código limpo que eles estão ferindo:
+
+1- private void somaNumeros(int a, int b, int c, int d, int e, int f)
+    R: Número excessívo de argumentos.
+
+2- private void oPaiTaOn()
+    R: Nomenclatura pouco clara sobre o que o método faz.
+
+3- private double checaSaldoEAtualiza(long userId, double value)
+    R: Metodo apresenta muitas funções sentralizadas em um único lugar.
