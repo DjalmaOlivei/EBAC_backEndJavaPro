@@ -2,6 +2,14 @@ package com.exercise.um;
 
 public class Calculadora {
 
+    /**
+     * 
+     * @param a numerador 1 operado
+     * @param b numerador 2 operador
+     * @param opreacao tipo da operação por estenço  "adicionar" "subtrair" "multiplicar" "dividir"
+     * @return resultado
+     * @throws Exception
+     */
     public static double operacao(int a, int b, String opreacao) throws Exception{
         double result;
 
