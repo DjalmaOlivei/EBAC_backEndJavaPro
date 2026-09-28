@@ -1,0 +1,3 @@
+você conseguiria entender o código que escreveu sem documentá-lo?
+    R: acredito que consiguiria por se tratar de um código bem simples de operações aritiméticas basicas.
+    Porem com o código comentado deixa tudo mais rápido, nem precisando abrir a própria classe pra entender o que cada método faz.
