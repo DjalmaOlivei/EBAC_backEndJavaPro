@@ -1,0 +1,46 @@
+1. Explique, em termos de Escalabilidade, 
+as vantagens e desvantagens das arquiteturas de software de Monólitos e Microsserviços.
+
+    R: Aqui é onde acredito que existe a maior diferença.
+        Monolito: em arquiteturas monoliticas se torna muito difícil fazer sua escalabilidade horizontal,
+                significando que para almentar a disponibilidade se torna necessário crescer os software inteiro,
+                ao inves de apenas apenas a feature necessária.
+        Microsserviços: Este já pensado para um mundo com demanda extremamente volátil é totalmente escalavel na vertical como na horizontal,
+                facilmente customisavel, permitindo crescer verticalmente o tamanho de um único serviço deichando ele mais "forte", 
+                quanto reproduzi-lo horizontalmente multiplicando-o.
+
+
+2. Explique, em termos de Disponibilidade,
+as vantagens e desvantagens das arquiteturas de software de Monólitos e Microsserviços.
+
+    R: Monolito: Não necessáriamente é uma arquitetura pensada para disponibilidade, ele é mais focado em uma solução "360°", 
+                tudo em um unico lugar o que torna almentar a disponibilidade uma tarefa extremamente mais cara, 
+                por ter que reproduzir o software inteiro quantas vezes forem necessária.
+       Microsserviços: Este já pensado em um contesto mais moderno de internet é totalmente planejado para disponibilidade, 
+                por extremamente customisavel, é uma tarefa pensda para essa arquitetura,
+                com a comunicação entre os serviços permitindo praticamente qualquer estrategia de disponibilidade pensada pelo time.
+
+3. Explique, em termos de Consistência, 
+as vantagens e desvantagens das arquiteturas de software de Monólitos e Microsserviços.
+
+    R:Mololito: Fortemente consistente, por não exigir comunicação complexa entre os componentes internos, 
+                causando grande dependencia interna, mas é mais fácil garantir a consistencia interna dado a simplicidade da comunicação.
+     Microsserviços: Consistencia relativamente mais fraca, dada a baixa dependencia dos componentes internos, 
+                gera um sistema de comunicação entre micro serviços bem mais complexos, dificultando a consistencia dos dados.
+
+4. Explique, em termos de Performance, 
+as vantagens e desvantagens das arquiteturas de software de Monólitos e Microsserviços.
+
+    R:Monolito: Ótimo pra otimização, dado que na época em que a arquitetura monolitica foi mais usada se tinha um gargalo de hardware notável,
+                podendo ser até mais pesado em questão de tamanho do software altamente centralizado, a performance sai com um custo grande mas com uma relativamente boa otimização.
+      Microsserviços: Dada a maior disponibilidade de hardware, a escalabilidade vem primeiro nesta arquitetura de micro serviços,
+                onde a performance tem um sistema de comunicação a aprte só pra permitir a alta customisação, o que permite um tamanho menor dada que só estara disponível o que é utilizado.
+
+
+5. Explique, em termos de Testabilidade, 
+as vantagens e desvantagens das arquiteturas de software de Monólitos e Microsserviços.
+
+    R:Monolito: Indiscutivelmente o teste na maioria das vezes é mais difícil, pela alta centralização, 
+                tudo é praticamente testado junto, onde tudo vai acabar interferindo em tudo.
+      Microsserviços: O teste também é altamente customisavel, podendo testar o tudo, como também o serviço individual,
+                acompanhando o crescimento do software, ao mesmo tempo de pode se testar a segurança de toda a aplicação. 
