@@ -1,0 +1,28 @@
+1. Explique, com suas palavras, a diferença entre contêineres e microsserviços. 
+
+Extra: é possível subir microsserviços em uma máquina virtual? Justifique sua resposta.
+
+    R:Micro serviços são aplicativos, pedaços de software e estruturas de códigos, 
+    enquanto containers são ambientes, uma simplificação de sistema sobre medida,
+    para servir somente o necessário de sua designação.
+    são utilizados sim para micro serviços muito comunmente.
+
+2.Explique, com suas palavras, 
+por que os desenvolvedores precisam fazer merge 
+frequente de suas mudanças de código para que a integração contínua funcione adequadamente.
+
+    R:porque nas cadeias de ci:cd funciona com uma rotina que vai passando por diferentes abientes de teste até chegar na produção,
+    assim os merges recorrentes precisam se adequar as rotinas e fazer os merges nas janelas desta rotina.
+
+3.Explique, com suas palavras, por que é necessário ter uma cobertura 
+abrangente de testes para que a prática de entrega contínua funcione.
+
+    R: Para garantir a melhoria continua da qualidade do software as rotinas de ci:cd possibilitam varias camadas de teste e desenvolvimento.
+    isso torna necessário as camadas de teste para pegar bugs, inconcistencias e má otimização, alem de requisitos de segurança. 
+
+4.Explique, com suas palavras, as diferenças entre entrega contínua e implantação contínua.
+
+    R: Nas rotinas de CI/CD < "CI" se trata da integração continua do projeto, onde se permite fazer integrações nas janelas de rotina,
+    de forma continua a cada janela de merge.
+    quanto a parte de CD referente a implementação continua, é a parte referente a implementação continua destas mudanças,
+    em cada uma das camadas de desenvolvimento, teste e produção.
