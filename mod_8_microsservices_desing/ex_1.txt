@@ -1,0 +1,31 @@
+Logs
+
+    Essenciais para rastreamento de imprevisibilidades em microsserviços,
+    é de extrema importância manter uma rastreabilidade excepcional,
+    sendo arquiteturas em microsserviços, tem-se um ecossistema 
+    de serviços independentes que podem contribuir para bugs,
+    que por sua vez, podem aparecer em diferentes fases do fluxo.
+    Então, em caso de microsserviços, torna-se mais difícil e engenhoso de
+    se rastrear, identificar e depurar.
+
+    Enquanto em sistemas monolíticos como tudo acontece em um "mesmo lugar"
+    a rastreabilidade é mais simples.
+
+Concorrencia
+
+    Aqui é uma das características que se destaca a maior compreensão dos microsserviços
+às necessidades de aplicações da atualidade, administrar, diluir e direcionar 
+    tráfego de requisições em arquiteturas descentralizadas é muito mais fácil, eficiente 
+    e preciso apontando as requisições para tráfegos distribuídos em microsserviços independentemente escaláveis.
+    
+    Diferentes de software monolíticos centralizados, onde escalar e distribuir trafego parece mais simples,
+    porem é muito mais ineficiente e caro.
+
+Serviços de apoio
+
+    Para manter microsserviços descentralizados e stateless, é preciso manter informações compartilhadas
+    entre serviços descentralizados e serviços de apoio internos, assim melhorando a consistência dos dados.
+    
+    Já para sistemas monolíticos que podem ter informações embutidas ou ser stateless,
+    não dependem de serviços de apoio para existir.
+         

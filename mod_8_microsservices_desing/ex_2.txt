@@ -1,0 +1,20 @@
+Motivos da importância de microsserviços stateless
+
+    1.Consistência dos dados:
+        Ter estados em diferentes serviços rodando ao mesmo tempo 
+        compromete a consistência entre eles
+        
+    2.Perca de dados:
+        Os Microsserviços precisam ser totalmente descartáveis e subistituíveis,
+        manter informações em um serviço que vai deixar de existir, implica
+        perca de informações.
+        
+    3.Segurança:
+        Manter informações em um microsserviço com estado pode facilitar o roubo
+        de dados por terceiros ou internos não autorizados que consigam acesso aos containers,
+        ou que abusem de possíveis brechas no sistema.
+        
+O que acontece se um serviço tiver estado e tivermos que matar uma de
+suas instâncias em produção?
+
+    Como explicado no item 2, dados podem ser perdidos.
