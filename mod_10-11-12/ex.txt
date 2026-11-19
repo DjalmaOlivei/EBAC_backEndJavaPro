@@ -1,0 +1,43 @@
+    1.Explique, com suas palavras, a diferença entre as consistências forte e eventual. 
+    Consegue pensar em um exemplo de quando usar cada uma? Em que tipo de sistemas?
+
+    Consistencia forte: é aquela onde os dados estão sempre dinponíveis em um estado completo,
+    e já consistente, não precisando ser atualizado ou sicronizar com dados de outro lugar.
+    este tipo de consistencia se torna muito mais caro e lento, 
+
+    Servindo quando não se pode correr o risco de talvez apresentar algum dado desatualizado, 
+    ou em bases que não mudam muito pouco acessadas, como uma base de ex funcionários desligados.
+    
+    Consistencia eventual: é aquela que os dados estarão eventualmente atuais, 
+    tendo algumas bases de dados atendendo servidores clientes e trocando informações entre sí,
+    eventualmente ficando uniformes e consistentes.
+    
+    servindo bem para base de dados que mudam constantemente muito acessadas exigindo escalação rápida dada a demanda,
+    como registro de curtidas e interações em post de redes sociais. 
+
+    2.Explique, com suas palavras, 
+    qual a diferença entre eventos de dados e eventos de aplicação. 
+    Quando você usaria um ou outro?
+
+    Um evento de dados e uma comunicação interna entre serviços,
+    quando um serviço avisa outro e compartilha dados de uma requisição via menssageria.
+    
+    Um evento de aplicação é também uma comunicação interna de microsserviços
+    costuma ser uma tarefa, um gatilho ou ainda um aviso de um serviço a outro.
+
+    3.Explique, com suas palavras, 
+    quais são as métricas mais importantes que um 
+    microsserviço deve emitir e por quê.
+    
+    As principais Metricas que devem ser medidas de um microsserviço são:
+    
+    Saúde: Esta vai ser responsável por saber se um micro serviço esta em baixa capacidade de demanda,
+    ou ainda se esta sobrando capacidade e gerando custos estras em baixa demanda.
+    
+    Acessos: Este não é importante somente para o time de infra e desenvolvimento mas a todos os interessados,
+    mas para a infra ém importante ter metricas de acesso para preparar a aplicação para demandas futuras, 
+    distribuição de recursos geograficos para melhoria de custo e desempenho.
+
+    Backlog: Entender a mensageria da aplicação para poder sabe como o seu sistema esta lidando 
+    com as filas, e como estão e se sendo devidadente cosumidas.
+
