@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f0">
+  <title>Lares — gestão de animais</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Lares, início">
+      <span class="brand-mark" aria-hidden="true">L</span>
+      <span>lares<span class="brand-period">.</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <button class="nav-link active" type="button" data-page="animals">Animais</button>
+      <button class="nav-link" type="button" data-page="register">Cadastrar animal</button>
+      <button class="nav-link" type="button" data-page="ranking">Resgatadores</button>
+    </nav>
+    <span class="topbar-note"><span class="online-dot"></span> Central de acolhimento</span>
+  </header>
+
+  <main class="page-shell">
+    <section class="page-intro">
+      <div>
+        <p class="eyebrow">CUIDADO QUE TRANSFORMA</p>
+        <h1>Um novo começo<br class="mobile-break"> para cada animal.</h1>
+        <p class="intro-copy">Acompanhe resgates, encontre companheiros esperando por um lar e mantenha tudo em um só lugar.</p>
+      </div>
+      <div class="intro-illustration" aria-hidden="true">
+        <span class="sun"></span>
+        <span class="illustration-paw">✳</span>
+        <span class="illustration-caption">todo carinho<br>faz diferença</span>
+      </div>
+    </section>
+
+    <section class="stats-grid" aria-label="Resumo dos animais">
+      <article class="stat-card">
+        <span class="stat-icon icon-lilac" aria-hidden="true">✿</span>
+        <div><p class="stat-label">Animais registrados</p><p class="stat-value" id="stat-total">—</p></div>
+        <span class="stat-foot">cães e gatos</span>
+      </article>
+      <article class="stat-card">
+        <span class="stat-icon icon-green" aria-hidden="true">♡</span>
+        <div><p class="stat-label">Esperando um lar</p><p class="stat-value" id="stat-available">—</p></div>
+        <span class="stat-foot">prontos para adoção</span>
+      </article>
+      <article class="stat-card">
+        <span class="stat-icon icon-peach" aria-hidden="true">⌂</span>
+        <div><p class="stat-label">Já adotados</p><p class="stat-value" id="stat-adopted">—</p></div>
+        <span class="stat-foot">uma história feliz</span>
+      </article>
+    </section>
+
+    <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+
+    <section id="animals-page" class="content-panel">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">NOSSO CUIDADO</p>
+          <h2>Conheça os animais</h2>
+        </div>
+        <button class="button button-primary" type="button" data-page="register"><span aria-hidden="true">＋</span> Cadastrar animal</button>
+      </div>
+      <div class="toolbar">
+        <div class="filter-tabs" role="group" aria-label="Filtrar por situação">
+          <button type="button" class="filter-button selected" data-status="all">Todos</button>
+          <button type="button" class="filter-button" data-status="available">Para adoção</button>
+          <button type="button" class="filter-button" data-status="adopted">Adotados</button>
+        </div>
+        <label class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <input id="search" type="search" placeholder="Buscar por nome ou raça" aria-label="Buscar por nome ou raça">
+        </label>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Animal</th><th>Espécie</th><th>Idade</th><th>Entrada</th><th>Resgatador</th><th>Situação</th></tr>
+          </thead>
+          <tbody id="animal-rows">
+            <tr><td class="table-message" colspan="6">Carregando animais...</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-count" id="table-count"></p>
+    </section>
+
+    <section id="register-page" class="content-panel" hidden>
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">NOVO RESGATE</p>
+          <h2>Cadastrar animal</h2>
+          <p class="section-copy">Preencha as informações do animal para incluí-lo no cadastro.</p>
+        </div>
+      </div>
+      <form id="animal-form" class="animal-form">
+        <div class="form-grid">
+          <label>Espécie
+            <select name="species" required>
+              <option value="cachorros">Cão</option>
+              <option value="gatos">Gato</option>
+            </select>
+          </label>
+          <label>Nome provisório
+            <input name="nomeProvisorio" type="text" maxlength="255" placeholder="Ex.: Pingo" required>
+          </label>
+          <label>Idade estimada (anos)
+            <input name="idadeEstimada" type="number" min="0" step="1" placeholder="Ex.: 2" required>
+          </label>
+          <label>Raça
+            <input name="raca" type="text" maxlength="255" placeholder="Ex.: Vira-lata" required>
+          </label>
+          <label>Porte
+            <select name="porte" required>
+              <option value="">Selecione</option>
+              <option value="Pequeno">Pequeno</option>
+              <option value="Medio">Médio</option>
+              <option value="Grande">Grande</option>
+            </select>
+          </label>
+          <label>Data de entrada
+            <input name="dataEntrada" type="date" required>
+          </label>
+          <label>Resgatador
+            <input name="resgatador" type="text" maxlength="255" placeholder="Nome de quem resgatou" required>
+          </label>
+          <label>Data de saída <span class="optional">(opcional)</span>
+            <input name="dataSaida" type="date">
+          </label>
+          <label>Nome de quem recebeu <span class="optional">(opcional)</span>
+            <input name="nomeRecebedor" type="text" maxlength="255" placeholder="Preencha se já foi adotado">
+          </label>
+          <label>Data de óbito <span class="optional">(opcional)</span>
+            <input name="dataObito" type="date">
+          </label>
+          <label class="full-width">Condição de chegada
+            <textarea name="condicaoChegada" rows="3" maxlength="255" placeholder="Descreva como o animal chegou" required></textarea>
+          </label>
+        </div>
+        <div class="form-actions">
+          <button class="button button-quiet" type="button" data-page="animals">Cancelar</button>
+          <button class="button button-primary" type="submit">Salvar cadastro <span aria-hidden="true">→</span></button>
+        </div>
+      </form>
+    </section>
+
+    <section id="ranking-page" class="content-panel" hidden>
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">QUEM FAZ A DIFERENÇA</p>
+          <h2>Ranking de resgatadores</h2>
+          <p class="section-copy">Veja os resgates registrados em um período.</p>
+        </div>
+      </div>
+      <form id="ranking-form" class="ranking-filters">
+        <label>Espécie
+          <select name="species">
+            <option value="cachorros">Cães</option>
+            <option value="gatos">Gatos</option>
+          </select>
+        </label>
+        <label>De
+          <input name="dataInicio" type="date" required>
+        </label>
+        <label>Até
+          <input name="dataFim" type="date" required>
+        </label>
+        <button class="button button-primary" type="submit">Consultar ranking <span aria-hidden="true">→</span></button>
+      </form>
+      <div class="ranking-results">
+        <div class="ranking-title"><span class="ranking-medal" aria-hidden="true">✦</span><h3 id="ranking-heading">Resgates no período</h3></div>
+        <div id="ranking-content" class="ranking-content"><p class="table-message">Escolha um período para consultar o ranking.</p></div>
+      </div>
+    </section>
+
+    <footer class="footer"><span>Feito com cuidado, para quem cuida.</span><span>Lares <span class="brand-period">•</span> gestão de acolhimento</span></footer>
+  </main>
+</body>
+</html>

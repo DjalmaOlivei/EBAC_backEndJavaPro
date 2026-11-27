@@ -1,0 +1,55 @@
+services:
+  # ============================================================================
+  # Banco de dados NoSQL: MongoDB
+  # ============================================================================
+  mongodb:
+    image: mongo:7
+    container_name: memelandia-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+      MONGO_INITDB_DATABASE: memelandia
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - memelandia-network
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ============================================================================
+  # Banco de dados Relacional: MySQL
+  # ============================================================================
+  mysql:
+    image: mysql:8.0
+    container_name: memelandia-mysql
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: memelandia
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - memelandia-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "admin", "-padmin"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  mongodb_data:
+  mysql_data:
+
+networks:
+  memelandia-network:
+    driver: bridge
